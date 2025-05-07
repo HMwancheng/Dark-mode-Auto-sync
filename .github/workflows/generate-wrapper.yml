@@ -1,0 +1,36 @@
+name: Generate Gradle Wrapper
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate-wrapper:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Generate Gradle Wrapper
+        run: |
+          curl -s https://get.sdkman.io | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install gradle 8.10
+          gradle wrapper --gradle-version 8.10
+
+      - name: Commit and push Gradle Wrapper
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add gradlew gradlew.bat gradle/wrapper/
+          git commit -m 'Add Gradle Wrapper'
+          git push
