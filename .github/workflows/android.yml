@@ -30,8 +30,12 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
+      # 调试输出目录，查看是否存在 APK 文件
+      - name: List build directory
+        run: ls -l app/build/outputs/apk/debug/
+
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2  # 将版本从 v3 改为 v2
         with:
           name: app-debug.apk
           path: app/build/outputs/apk/debug/app-debug.apk
