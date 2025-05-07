@@ -6,9 +6,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.0'  // 更新为最新版本
+        classpath 'com.android.tools.build:gradle:8.0.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10"  // 添加 Kotlin 插件依赖
     }
 }
+
 
 
 allprojects {
