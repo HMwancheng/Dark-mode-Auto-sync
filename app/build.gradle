@@ -1,10 +1,15 @@
+plugins {
+    id 'com.android.application'  // 应用 Android 插件
+    id 'kotlin-android' version '1.8.10'  // 添加 Kotlin 插件
+}
+
 android {
     compileSdkVersion 33
 
-    // 更新 namespace 和 applicationId 为新的包名
-    namespace 'com.HM_wancheng.DarkmodeAutoSync'  // 使用新的包名作为 namespace
+    namespace 'com.HM_wancheng.DarkmodeAutoSync'  // 确保包名一致
+
     defaultConfig {
-        applicationId "com.HM_wancheng.DarkmodeAutoSync"  // 更新 applicationId 为新的包名
+        applicationId "com.HM_wancheng.DarkmodeAutoSync"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
@@ -17,4 +22,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'  // 依赖 Kotlin 标准库
 }
