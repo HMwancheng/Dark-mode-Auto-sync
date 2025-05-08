@@ -4,16 +4,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
-
-    namespace 'com.HM_wancheng.DarkmodeAutoSync'  // 确保包名一致
+    namespace 'com.HM_wancheng.DarkmodeAutoSync'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.HM_wancheng.DarkmodeAutoSync"
-        minSdkVersion 21
-        targetSdkVersion 33
+        applicationId 'com.HM_wancheng.DarkmodeAutoSync'
+        minSdk 21
+        targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName '1.0.0'
     }
 
     buildTypes {
@@ -25,5 +24,9 @@ android {
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'  // 依赖 Kotlin 标准库
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
