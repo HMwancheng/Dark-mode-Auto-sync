@@ -1,7 +1,9 @@
-rootProject.name = "DarkmodeAutoSync"
-include ':app'
+
 pluginManagement {
     plugins {
         id 'org.jetbrains.kotlin.android' version '1.8.10' apply false
     }
 }
+
+rootProject.name = "DarkmodeAutoSync"
+include ':app'
