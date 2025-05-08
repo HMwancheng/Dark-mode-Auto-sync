@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.application'  // 应用 Android 插件
-    id 'kotlin-android' version '1.8.10'  // 添加 Kotlin 插件
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
